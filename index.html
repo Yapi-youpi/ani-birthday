@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>С днём рождения, Ани!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
+
+  <header class="hero">
+    <p class="kicker">для самой особенной</p>
+    <h1>С днём рождения,<br /><em>Ани</em></h1>
+    <p class="lead">Сегодня можно загадывать желания без меры. Начни с торта.</p>
+
+    <button class="cake-scene" id="cake" type="button" aria-label="Задуть свечи на торте">
+      <div class="plate"></div>
+      <div class="layer layer-bottom"></div>
+      <div class="layer layer-mid"></div>
+      <div class="layer layer-top"></div>
+      <div class="drip"></div>
+      <div class="candles" id="candles">
+        <span class="candle"><i class="flame"></i></span>
+        <span class="candle tall"><i class="flame"></i></span>
+        <span class="candle"><i class="flame"></i></span>
+      </div>
+    </button>
+    <p class="hint" id="cakeHint">Нажми на торт — и задуй свечи</p>
+    <p class="wish is-hidden" id="wish">Свечи задуты. Загадай желание, Ани. Пусть оно сбудется.</p>
+    <button class="btn" id="confettiBtn" type="button">Ещё конфетти</button>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>Три маленьких подарка</h2>
+      <p class="section-lead">Выбери любой — или все сразу.</p>
+      <div class="gifts">
+        <button class="gift" data-title="Тепло" data-text="Пусть этот год будет мягким, смелым и очень твоим.">
+          <span class="gift-box">🎁</span>
+          <span class="gift-label">Открыть</span>
+        </button>
+        <button class="gift" data-title="Радость" data-text="Желаю много тёплых людей, вкусного кофе и лёгких поводов улыбаться.">
+          <span class="gift-box">🎁</span>
+          <span class="gift-label">Открыть</span>
+        </button>
+        <button class="gift" data-title="Мечты" data-text="Пусть сбывается даже то, что ещё не успела загадать.">
+          <span class="gift-box">🎁</span>
+          <span class="gift-label">Открыть</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Шары с секретом</h2>
+      <p class="section-lead">Лопни шар — внутри слово на год вперёд.</p>
+      <div class="balloons" id="balloons">
+        <button class="balloon pink" data-word="Сияй">🎈</button>
+        <button class="balloon gold" data-word="Люби">🎈</button>
+        <button class="balloon mint" data-word="Мечтай">🎈</button>
+        <button class="balloon lilac" data-word="Смейся">🎈</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Открытки-пожелания</h2>
+      <p class="section-lead">Нажми карточку, чтобы перевернуть.</p>
+      <div class="cards">
+        <button class="flip" type="button">
+          <span class="flip-inner">
+            <span class="flip-face front">Смелость</span>
+            <span class="flip-face back">Делать то, что делает тебя живой.</span>
+          </span>
+        </button>
+        <button class="flip" type="button">
+          <span class="flip-inner">
+            <span class="flip-face front">Спокойствие</span>
+            <span class="flip-face back">Место, где можно просто быть собой.</span>
+          </span>
+        </button>
+        <button class="flip" type="button">
+          <span class="flip-inner">
+            <span class="flip-face front">Чудеса</span>
+            <span class="flip-face back">Пусть они приходят без расписания.</span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Письмо для тебя</h2>
+      <button class="envelope" id="envelope" type="button" aria-label="Открыть письмо">
+        <span class="flap">Нажми, чтобы открыть</span>
+        <span class="paper" id="letter">Ани,</span>
+      </button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Этот день — твой. С любовью 💛</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
