@@ -17,6 +17,7 @@ html, body {
   background: var(--bg);
   color: var(--cream);
   font-family: Manrope, system-ui, sans-serif;
+  scroll-behavior: smooth;
 }
 
 body { overflow-x: hidden; }
@@ -55,7 +56,7 @@ canvas#confetti { z-index: 30; }
   display: grid;
   place-items: center;
   text-align: center;
-  padding: 64px 20px 80px;
+  padding: 48px 20px 40px;
 }
 
 .kicker {
@@ -237,6 +238,62 @@ h2 {
   font-family: inherit;
 }
 
+.btn-ghost {
+  background: transparent;
+  color: var(--cream);
+  box-shadow: inset 0 0 0 2px rgba(255, 244, 232, 0.35);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.play-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 22px;
+  max-width: 36rem;
+}
+
+.play-nav a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.scroll-cue {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--gold);
+  text-decoration: none;
+  animation: bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+.float-heart {
+  position: fixed;
+  z-index: 40;
+  pointer-events: none;
+  font-size: 1.35rem;
+  animation: rise 0.9s ease-out forwards;
+}
+
+@keyframes rise {
+  to { transform: translateY(-90px) scale(1.35); opacity: 0; }
+}
+
 .gifts, .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -362,11 +419,76 @@ h2 {
   line-height: 1.55;
 }
 
+.wheel-box {
+  text-align: center;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.wheel-pointer {
+  color: var(--gold);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.wheel {
+  width: 220px;
+  height: 220px;
+  margin: 8px auto 18px;
+  border-radius: 50%;
+  border: 8px solid #fff6ea;
+  background: conic-gradient(
+    #ff8ec8 0 60deg,
+    #ffd37a 60deg 120deg,
+    #9aeadc 120deg 180deg,
+    #cbb2fe 180deg 240deg,
+    #ffb3c7 240deg 300deg,
+    #a0c4ff 300deg 360deg
+  );
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  transition: transform 2.4s cubic-bezier(0.15, 0.85, 0.25, 1);
+}
+
+.spin-text {
+  min-height: 3rem;
+  color: var(--gold);
+}
+
+.garden {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.flower {
+  border: 0;
+  background: transparent;
+  font-size: 2.4rem;
+  cursor: pointer;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+.flower.picked {
+  opacity: 0.25;
+  transform: scale(0.7);
+  pointer-events: none;
+}
+
+.vase {
+  text-align: center;
+  font-size: 2.2rem;
+  min-height: 2.6rem;
+  letter-spacing: 4px;
+}
+
 footer {
   text-align: center;
   padding: 12px 16px 64px;
   opacity: 0.75;
 }
+
 
 @media (max-width: 600px) {
   .hero { padding-top: 48px; }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>С днём рождения, Ани!</title>
+  <title>С днём рождения, Аня!</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -18,8 +18,8 @@
 
   <header class="hero">
     <p class="kicker">для самой особенной</p>
-    <h1>С днём рождения,<br /><em>Ани</em></h1>
-    <p class="lead">Сегодня можно загадывать желания без меры. Начни с торта.</p>
+    <h1>С днём рождения,<br /><em>Аня</em></h1>
+    <p class="lead">Кликни куда угодно — полетят сердечки. А торт можно задуть.</p>
 
     <button class="cake-scene" id="cake" type="button" aria-label="Задуть свечи на торте">
       <div class="plate"></div>
@@ -34,14 +34,26 @@
       </div>
     </button>
     <p class="hint" id="cakeHint">Нажми на торт — и задуй свечи</p>
-    <p class="wish is-hidden" id="wish">Свечи задуты. Загадай желание, Ани. Пусть оно сбудется.</p>
-    <button class="btn" id="confettiBtn" type="button">Ещё конфетти</button>
+    <p class="wish is-hidden" id="wish">Свечи задуты. Загадай желание, Аня. Пусть оно сбудется.</p>
+    <div class="hero-actions">
+      <button class="btn" id="confettiBtn" type="button">Ещё конфетти</button>
+      <button class="btn btn-ghost" id="fireworksBtn" type="button">Салют</button>
+    </div>
+    <nav class="play-nav" aria-label="Интерактивы">
+      <a href="#gifts">Подарки</a>
+      <a href="#balloons">Шары</a>
+      <a href="#wheel">Колесо</a>
+      <a href="#bouquet">Букет</a>
+      <a href="#cards">Открытки</a>
+      <a href="#letter">Письмо</a>
+    </nav>
+    <a class="scroll-cue" href="#gifts">Ещё сюрпризы ↓</a>
   </header>
 
   <main>
-    <section class="section">
+    <section class="section" id="gifts">
       <h2>Три маленьких подарка</h2>
-      <p class="section-lead">Выбери любой — или все сразу.</p>
+      <p class="section-lead">Открой любой — или все сразу.</p>
       <div class="gifts">
         <button class="gift" data-title="Тепло" data-text="Пусть этот год будет мягким, смелым и очень твоим.">
           <span class="gift-box">🎁</span>
@@ -58,10 +70,10 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="balloons">
       <h2>Шары с секретом</h2>
       <p class="section-lead">Лопни шар — внутри слово на год вперёд.</p>
-      <div class="balloons" id="balloons">
+      <div class="balloons">
         <button class="balloon pink" data-word="Сияй">🎈</button>
         <button class="balloon gold" data-word="Люби">🎈</button>
         <button class="balloon mint" data-word="Мечтай">🎈</button>
@@ -69,7 +81,32 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="wheel">
+      <h2>Колесо пожеланий</h2>
+      <p class="section-lead">Крутани — выпадет пожелание на год.</p>
+      <div class="wheel-box">
+        <div class="wheel-pointer">▼</div>
+        <div class="wheel" id="wheelDisk" aria-hidden="true"></div>
+        <button class="btn" id="spinBtn" type="button">Крутить</button>
+        <p class="spin-text" id="spinText">Нажми кнопку и смотри, что выпадет</p>
+      </div>
+    </section>
+
+    <section class="section" id="bouquet">
+      <h2>Собери букет</h2>
+      <p class="section-lead">Кликай по цветам — они соберутся в вазе.</p>
+      <div class="garden">
+        <button class="flower" type="button" data-flower="🌸">🌸</button>
+        <button class="flower" type="button" data-flower="🌷">🌷</button>
+        <button class="flower" type="button" data-flower="🌹">🌹</button>
+        <button class="flower" type="button" data-flower="🌼">🌼</button>
+        <button class="flower" type="button" data-flower="🌺">🌺</button>
+      </div>
+      <p class="vase" id="vase">🏺</p>
+      <p class="wish" id="bouquetWish"></p>
+    </section>
+
+    <section class="section" id="cards">
       <h2>Открытки-пожелания</h2>
       <p class="section-lead">Нажми карточку, чтобы перевернуть.</p>
       <div class="cards">
@@ -94,11 +131,11 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="letter">
       <h2>Письмо для тебя</h2>
       <button class="envelope" id="envelope" type="button" aria-label="Открыть письмо">
         <span class="flap">Нажми, чтобы открыть</span>
-        <span class="paper" id="letter">Ани,</span>
+        <span class="paper" id="letterPaper">Аня,</span>
       </button>
     </section>
   </main>
